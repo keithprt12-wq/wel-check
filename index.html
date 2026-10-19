@@ -86,7 +86,8 @@ footer a,main a{color:var(--accent)}
   </div>
 
   <footer>
-    <p id="disc"></p>
+    <p><b id="foot"></b></p>
+    <p><b>About our packs:</b> <span id="disc"></span></p>
     <p><b>Sources:</b> <a href="https://www.safeworkaustralia.gov.au/doc/workplace-exposure-limits-airborne-contaminants" rel="noopener">Safe Work Australia: Workplace exposure limits for airborne contaminants (WEL list)</a> ·
       <a href="https://www.safeworkaustralia.gov.au/doc/workplace-exposure-standards-airborne-contaminants" rel="noopener">WES list</a> ·
       <a href="https://www.safeworkaustralia.gov.au/safety-topic/managing-health-and-safety/workplace-exposure-limits-airborne-contaminants/changes-between-wes-and-wel" rel="noopener">Changes between the WES and WEL</a>. State notes link to each regulator's own page.</p>
@@ -105,6 +106,7 @@ const picked = { trades: new Set(), tasks: new Set() };
 (() => { const d = Math.ceil((new Date("2026-12-01T00:00:00+10:00") - new Date()) / 864e5);
   $("days").textContent = d > 1 ? d + " days to go" : d === 1 ? "1 day to go" : "now in force"; })();
 $("disc").textContent = DATA.disclaimer;
+$("foot").textContent = "This free check is " + DATA.footer.replace(/^General information only\. /, "general information only. ").replace(/ Checked .*$/, "");
 $("checked").textContent = [...new Set(DATA.trades.map(t => t.checked))].join(" / ");
 
 // trades
