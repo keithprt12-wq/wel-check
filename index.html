@@ -167,8 +167,8 @@ function render() {
   $("samewrap").classList.toggle("hide", !same.length);
   const trades = DATA.trades.filter(t => picked.trades.has(t.id));
   $("cta").innerHTML = `<h3>Next step: the full Switch-Over Pack</h3>
-    <p>This free check shows <i>what</i> changes. The pack for your trade gives your crew the rest, ready to use before 1 December:</p>
-    <ul><li>Plain-English guide to every limit that matters for your trade</li><li>One-page site checklist</li><li>10-minute toolbox talk with sign-on sheet</li><li>Excel exposure register and SWMS update template</li></ul>
+    <p>This free check shows <i>what</i> changes. The pack for your trade gives your crew the rest, to brief the crew before 1 December:</p>
+    <ul><li>Plain-English guide to the limit changes for your trade</li><li>One-page site checklist</li><li>10-minute toolbox talk with sign-on sheet</li><li>Excel exposure register and SWMS update template</li></ul>
     ${trades.map(t => `<p style="margin:.8em 0 .2em"><b>${esc(t.pack)}</b></p>
       <div class="row"><a class="btn primary" href="${esc(t.std)}" rel="noopener" target="_blank">Standard licence A$99 on Etsy</a>
       <a class="btn" href="${esc(t.site)}" rel="noopener" target="_blank">Site licence A$490 (all sites)</a></div>`).join("")}
